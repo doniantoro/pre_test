@@ -1,33 +1,31 @@
-# Slim Framework 3 Skeleton Application
+# Slim Framework 3 Skeleton ApplicationT
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+This is using slim framework version 3  and sleketon
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+to run this apps able to use docker and docker , for composer u can start with 
 
-## Install the Application
-
-Run this command from the directory in which you want to install your new Slim Framework application.
-
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
-
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can run these commands 
-
-	cd [my-app-name]
-	php composer.phar start
+    	Composer start
 	
-Or you can use `docker-compose` to run the app with `docker`, so you can run these commands:
+	docker-compose up -d
 
-         cd [my-app-name]
-	 docker-compose up -d
-After that, open `http://0.0.0.0:8080` in your browser.
 
-Run this command in the application directory to run the test suite
+The api end-point :
 
-	php composer.phar test
+	/getUser/{id}/ : get 1 user data.
+	/getListUser : get >1 user data. 
+	/getCompany/{id}/ : get 1 company.
+	/getListCompany : get >1 company.
+	/getBudgetCompany/{id}/: get 1 company. 
+	/getListBudgetCompany : get >1 company.
+	/getLogTransaction : get the log that provide name of the user, account number, company name, transaction type, transaction date, amount, and remaining 	amount.
+	/createCompany : create 1 company. required name,address
+	/updateCompany/{id}/: update 1 company data.
+	/deleteCompany/{id}/: delete 1 company data.
+	
+	/deleteUser/{id}/ : delete 1 company data. 
+	/createUser : create 1 user.> required first_name,lastname,email,account,company_id,bank,no_rek
+	/updateUser/{id}/ : update 1 user data.> required id
+	
+*Note : -every every link which used /{id}/ , have to fill number like 1,2,3
+	-Every end point required use key, the key which i made g6swmAP8X5VG4jCi
 
-That's it! Now go build something cool.
