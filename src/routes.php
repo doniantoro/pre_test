@@ -190,6 +190,10 @@ $app->post("/createTransaction/", function (Request $request, Response $response
     $type=$_REQUEST['type'];
     $user_id=$_REQUEST['user_id'];
     $amount=$_REQUEST['amount'];
+    if ($type != 'R' && $type != 'S' && $type != 'C'){
+
+    return $response->withJson(["status" => "failed", "data" => "0","messsage"=>"Type should R,S or C"], 200);
+    }
 
     $get_user="select*from user where id=$user_id";
     $stmt = $this->db->prepare($get_user);
