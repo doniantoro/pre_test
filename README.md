@@ -1,33 +1,38 @@
-# Slim Framework 3 Skeleton Application
+# Slim Framework 3 Skeleton ApplicationT
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+This is using slim framework version 3  and sleketon
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+i can provide sql database also which can you import on your sql with name query.sql
 
-## Install the Application
+to run this apps able to use docker and docker , for composer u can start with 
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+    	Composer start
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+,or we can use docker with
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+	docker-compose up -d
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
 
-To run the application in development, you can run these commands 
+The api end-point :
 
-	cd [my-app-name]
-	php composer.phar start
+	/getUser/{id}/ : get 1 user data.  >> Methode : get
+	/getListUser : get >1 user data.   >> Methode : get
+	/getCompany/{id}/ : get 1 company.  >> Methode : get
+	/getListCompany : get >1 company.  >> Methode : get
+	/getBudgetCompany/{id}/: get 1 company.   >> Methode : get
+	/getListBudgetCompany : get >1 company.  >> Methode : get
+	/getLogTransaction : get the log that provide name of the user, account number, company name, transaction type, transaction date, amount, and remaining 	amount.  >> Methode : get
+	/createCompany : create 1 company. required name,address   >> Methode : post
+	/updateCompany/{id}/: update 1 company data. >> Methode : put
+	/deleteCompany/{id}/: delete 1 company data. >> Methode : delete
 	
-Or you can use `docker-compose` to run the app with `docker`, so you can run these commands:
+	/deleteUser/{id}/ : delete 1 company data. >> Methode : delete
+	/createUser : create 1 user.> required first_name,lastname,email,account,company_id,bank,no_rek >> Methode : post
+	/updateUser/{id}/ : update 1 user data.> required id >> Methode : put
+	/createTransaction/ : Create transaction,and will update if transaction succes ,required:type,amount,user_id 
+	
+	
+	
+*Note : -every every link which used /{id}/ , have to fill number like 1,2,3
+	-Every end point required use key, the key which i made g6swmAP8X5VG4jCi
 
-         cd [my-app-name]
-	 docker-compose up -d
-After that, open `http://0.0.0.0:8080` in your browser.
-
-Run this command in the application directory to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
